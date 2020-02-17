@@ -521,7 +521,8 @@ body {
   height: 100%; }
 
 #capture_image {
-  width: 100%; }
+  width: 100%;
+border: solid 1px #000; }
   @media screen and (max-width: 768px) {
     #capture_image {
       max-height: 104.1666666667vw;
