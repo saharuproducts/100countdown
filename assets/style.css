@@ -127,6 +127,10 @@ body {
   
 }
 
+.a-canvas {
+  pointer-events: none;
+}
+
 .main-txt {
   font-size: 1.7rem;
   color: #000;
