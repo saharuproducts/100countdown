@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta name="”robots”" content="”noindex,nofollow”" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>100日後に死ぬWebAR</title>
+    <script src="https://aframe.io/releases/1.0.2/aframe.min.js"></script>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+      integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1:700c&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Walter+Turncoat&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript" src="assets/camera-bg.js"></script>
+    <script src="assets/countdown.js"></script>
+    <link rel="stylesheet" href="./assets/rc_style.css" />
+    <!-- <link rel="stylesheet" href="./style.css" /> -->
+    <link rel="stylesheet" href="./style 2.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body style="margin : 0px; overflow: hidden;">
+    <a-scene
+      vr-mode-ui="enabled:false"
+      device-orientation-permission-ui="enabled: false"
+    >
+      <a-assets class="a-assets">
+        <img id="white-frame-img" src="assets/img/white-frame-big.png" />
+        <img id="text-img-before" src="assets/img/text_before.jpeg" />
+        <img id="text-img-after" src="assets/img/text_after.jpeg" />
+        <!-- <img id="stamp_1" src="assets/stamp/ailien.png" />
+        <img id="stamp_2" src="assets/stamp/angel.png" />
+        <img id="stamp_3" src="assets/stamp/cupcats.png" />
+        <img id="stamp_4" src="assets/stamp/dogincloud.png" />
+        <img id="stamp_5" src="assets/stamp/oni1.png" />
+        <img id="stamp_6" src="assets/stamp/oni2.png" />
+        <img id="stamp_7" src="assets/stamp/title.png" />
+        <img id="stamp_8" src="assets/stamp/ufo.png" />
+        <img id="stamp_9" src="assets/stamp/usa.png" />
+        <img id="stamp_10" src="assets/stamp/inu.png" /> -->
+        <!-- <a-asset-item
+          id="stamp_11"
+          src="assets/stamp/inu/inu.gltf"
+        ></a-asset-item> -->
+      </a-assets>
+      <a-image
+        src="#white-frame-img"
+        position="0 1.6 -1"
+        scale="2 2 2"
+        class="frame-obj"
+      ></a-image>
+      <a-image
+        src="#text-img-before"
+        position="-0.15 1.23 -0.9"
+        scale=" 0.33 0.1 0.4"
+        class="frame-obj"
+      ></a-image>
+      <a-text
+        font="exo2bold"
+        class="main-text"
+        value="null"
+        position="0.02 1.29 -0.8"
+        scale="0.4 0.4 0.4"
+        color="black"
+      ></a-text>
+      <a-image
+        src="#text-img-after"
+        position="0.25 1.23 -0.9"
+        scale=" 0.08 0.1 0.08"
+        class="frame-obj"
+      ></a-image>
+    </a-scene>
+
+    <nav class="header">
+      <ul class="button_list">
+        <li class="button_list_item button_list_item-camera">
+          <a
+            id="btn_switch_camera"
+            class="changeContainer"
+            href="javascript:void(0)"
+            ><i class="fas fa-sync-alt"></i
+          ></a>
+        </li>
+        <li class="button_list_item button_list_item-share">
+          <a
+            class="snsContainer"
+            href="https://twitter.com/intent/tweet?url=https://arisaito.github.io/house_labo/2020/0218/100countdown/index.html"
+            target="_blank"
+            ><i class="fab fa-twitter"></i
+          ></a>
+        </li>
+      </ul>
+    </nav>
+    <!-- ↑header -->
+
+    <nav class="cameraContainer">
+      <!-- ↓modal 2-->
+      <div class="modal_wrap camera_modal">
+        <input id="capture_input" type="checkbox" />
+        <div class="modal_overlay">
+          <label for="capture_input" class="modal_trigger"></label>
+          <div class="modal_content">
+            <img id="capture_image" src="./assets/img/picture.jpg" alt="写真" />
+            <p id="capture_download_text" class="camera_modal_txt">
+              画像長押しで保存できます
+            </p>
+            <div class="camera_modal_btn">
+              <label for="capture_input" class="close_button"
+                ><i class="fas fa-times"></i
+              ></label>
+              <a
+                id="capture_download_button"
+                class="btn_reserve"
+                href=""
+                download="tobira.jpg"
+                >保存する</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <label id="capture_button" class="camera_openbtn"
+        ><img
+          class="btn_camera"
+          src="./assets/img/btn_camera.png"
+          alt="シャッターボタン"
+      /></label>
+    </nav>
+    <script type="text/javascript" src="assets/utility.js"></script>
+
+    <video
+      id="camera-bg"
+      autoplay
+      muted
+      playsinline
+      style="position: absolute; top: 0; left: 0; z-index: -2;"
+    ></video>
+  </body>
+</html>
