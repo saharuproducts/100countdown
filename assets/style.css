@@ -61,7 +61,7 @@ table {
   100% {
     opacity: 1; } }
 body {
-  font-family: 'Walter Turncoat', cursive;
+  font-family: 'Walter Turncoat', cursive, sans-serif ;
   height: 100%;
   width: 100%;
   font-size: 14px;
@@ -452,10 +452,9 @@ body {
   .modal_wrap .btn_ok, .modal_wrap .btn_reserve {
     display: block;
     position: initial;
-    color: #669AFF;
+    color: #000000;
     background-color: #fff;
-    border: 2px solid #669AFF;
-    box-shadow: 0 4px 0 #3378ff;
+    border: 2px solid #000000;
     margin: 36px auto 0;
     height: 64px;
     line-height: 60px;
@@ -478,8 +477,7 @@ body {
         line-height: 11.9791666667vw;
         border-radius: 6.25vw;
         font-size: 4.6875vw;
-        border: 0.5208333333vw solid #669AFF;
-        box-shadow: 0 0.5208333333vw 0 #3378ff; }
+        border: 0.5208333333vw solid #000000; }
         .modal_wrap .btn_ok:hover, .modal_wrap .btn_reserve:hover {
           text-decoration: none; } }
     @media screen and (max-width: 768px) and (orientation: landscape) {
@@ -539,8 +537,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 8px 8px 0 0;
-  background-color: #669AFF;
+  border-radius: 200px;
+  background-color: #000000;
   position: absolute;
   top: -48px;
   right: 0;
