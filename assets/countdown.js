@@ -1,6 +1,6 @@
 window.addEventListener("load", function() {
   let text = document.querySelector(".main-text");
-  let deathDate = new Date("2020/03/20 00:00:00");
+  let deathDate = new Date("2020/03/21 00:00:00");
   let interval = 100;
   countdown = () => {
     let nowDate = new Date();
